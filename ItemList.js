@@ -7,10 +7,10 @@ import Item from './components/Item'
 export default class ItemList extends Component {
     render() {
         const jackets = [
-            {image:'', rating:'4', price:''},
-            {image:'', rating:'2', price:''},
-            {image:'', rating:'5', price:''},
-            {image:'', rating:'3', price:''}
+            {image:require('./assets/greenHoodie.png'), rating:'4', price:'100', name:'Green Cotton Hoodie'},
+            {image:require('./assets/pinkHoodie.png'), rating:'2', price:'250', name:'Pink Hoodie'},
+            {image:require('./assets/redHoodie.png'), rating:'5', price:'300', name:'Red Cotton Hoodie'},
+            {image:require('./assets/hoodie.png'), rating:'3', price:'150', name:'Black Silk Hoodie'}
         ]
 
         return (
@@ -34,7 +34,7 @@ export default class ItemList extends Component {
                     <Text style={styles.filter}>Filter</Text>
                 </View>
 
-                <ScrollView style={styles.listContainer} showsHorizontalScrollIndicator={false}>
+                <ScrollView style={styles.listContainer} showsVerticalScrollIndicator={false}>
                     <FlatList
                     data={jackets}
                     renderItem={({item})=><Item item={item}/>}

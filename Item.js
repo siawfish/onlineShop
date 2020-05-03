@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native'
 import { Ionicons, Feather, FontAwesome5 } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
-import { Rating } from 'react-native-ratings'
 
 export default class Item extends Component {
     render() {
