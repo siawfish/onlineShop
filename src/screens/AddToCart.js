@@ -3,6 +3,20 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 
 
 export default class AddToCart extends Component {
+    next = () => {
+      const { navigation } = this.props
+      navigation.navigate('Success')
+    }
+
+    skip = () => {
+      const { navigation } = this.props
+      navigation.navigate('Success')
+    }
+
+    prev = () => {
+      const { navigation } = this.props
+      navigation.navigate('Shop')
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -18,23 +32,23 @@ export default class AddToCart extends Component {
                     </Text>
 
                     <View style={styles.imgContainer}>
-                    <Image style={styles.img} source={require('./assets/add2cart.png')}/>  
+                    <Image style={styles.img} source={require('../../assets/add2cart.png')}/>  
                     </View>
 
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity onPress={this.next} style={styles.btn}>
                     <Text style={styles.btnText}>Next</Text>
                     </TouchableOpacity>
 
                     <View style={styles.bottomLayout}>
-                        <View style={styles.bottomTextConPrev}>
+                        <TouchableOpacity onPress={this.prev} style={styles.bottomTextConPrev}>
                             <Text style={styles.bottomText}>Previous</Text>
-                        </View>
+                        </TouchableOpacity>
                         <View style={styles.dotsContainer}>
                             <View style={styles.dot}></View><View style={styles.doubleDot}></View><View style={styles.dot}></View>
                         </View>
-                        <View style={styles.bottomTextCon}>
+                        <TouchableOpacity onPress={this.skip} style={styles.bottomTextCon}>
                             <Text style={styles.bottomText}>Skip</Text>
-                        </View>
+                        </TouchableOpacity>
                     </View>   
 
                 </View>
@@ -51,7 +65,7 @@ const styles = StyleSheet.create({
     },
   
     contentContainer: {
-      marginTop: 120,
+      marginTop: 30,
       marginHorizontal:30,
       justifyContent: 'space-between'
     },

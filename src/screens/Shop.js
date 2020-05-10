@@ -1,13 +1,24 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 
-export default class Success extends Component {
+export default class Shop extends Component {
+    next = () => {
+      const { navigation } = this.props
+      navigation.navigate('AddToCart')
+    }
+
+    skip = () => {
+      const { navigation } = this.props
+      navigation.navigate('Success')
+    }
+
     render() {
+        
         return (
             <View style={styles.container}>
                 <View style={styles.contentContainer}>
 
-                    <Text style={styles.title}>PAYMENT SUCCESSFUL</Text>
+                    <Text style={styles.title}>ONLINE SHOPPING</Text>
 
                     <Text style={styles.para}>Nisi aliquip ut ullamco consequat officia enim do. 
                     Sit qui incididunt sit enim magna in. Minim sit anim elit dolor officia irure. 
@@ -17,20 +28,20 @@ export default class Success extends Component {
                     </Text>
 
                     <View style={styles.imgContainer}>
-                    <Image style={styles.img} source={require('./assets/success.png')}/>  
+                    <Image style={styles.img} source={require('../../assets/shopping.png')}/>  
                     </View>
 
-                    <TouchableOpacity style={styles.btn}>
-                    <Text style={styles.btnText}>Get Started</Text>
+                    <TouchableOpacity onPress={this.next} style={styles.btn}>
+                    <Text style={styles.btnText}>Next</Text>
                     </TouchableOpacity>
 
                     <View style={styles.bottomLayout}>
-                        <View style={styles.bottomTextConPrev}>
-                            <Text style={styles.bottomText}>Previous</Text>
-                        </View>
-                        <View style={styles.dotsContainer}>
-                            <View style={styles.dot}></View><View style={styles.dot}></View><View style={styles.doubleDot}></View>
-                        </View>
+                    <View style={styles.dotsContainer}>
+                        <View style={styles.doubleDot}></View><View style={styles.dot}></View><View style={styles.dot}></View>
+                    </View>
+                    <TouchableOpacity onPress={this.skip} style={styles.bottomTextCon}>
+                        <Text style={styles.bottomText}>Skip</Text>
+                    </TouchableOpacity>
                     </View>   
 
                 </View>
@@ -38,8 +49,6 @@ export default class Success extends Component {
         )
     }
 }
-
-
 
 const styles = StyleSheet.create({
     container: {
@@ -49,7 +58,7 @@ const styles = StyleSheet.create({
     },
   
     contentContainer: {
-      marginTop: 120,
+      marginTop: 30,
       marginHorizontal:30,
       justifyContent: 'space-between'
     },
@@ -84,7 +93,7 @@ const styles = StyleSheet.create({
       alignItems:"center",
       marginHorizontal:100,
       shadowColor: '#000',
-      shadowOffset: { width: 1, height: 3 },
+      shadowOffset: { width: 0, height: 3 },
       shadowOpacity: 0.8,
       shadowRadius: 2,  
       elevation: 5
@@ -108,11 +117,6 @@ const styles = StyleSheet.create({
     bottomText: {
       color:'#aaa',
     },
-
-    bottomTextConPrev: {
-      position:'absolute',
-      left:0
-    },
   
     bottomTextCon: {
       position:'absolute',
@@ -132,11 +136,8 @@ const styles = StyleSheet.create({
      height:8 ,
      borderRadius:8,
      backgroundColor:'#ffcc33',
-     marginStart:3
     }
   
     
   });
   
-
-

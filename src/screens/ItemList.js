@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, Text, TextInput, ScrollView, FlatList } from 'react-native'
 import { Ionicons, Feather, FontAwesome5 } from '@expo/vector-icons'
-import Item from './components/Item'
+import Item from '../components/Item'
 
 
 export default class ItemList extends Component {
     render() {
         const jackets = [
-            {image:require('./assets/greenHoodie.png'), rating:'4', price:'100', name:'Green Cotton Hoodie'},
-            {image:require('./assets/pinkHoodie.png'), rating:'2', price:'250', name:'Pink Hoodie'},
-            {image:require('./assets/redHoodie.png'), rating:'5', price:'300', name:'Red Cotton Hoodie'},
-            {image:require('./assets/hoodie.png'), rating:'3', price:'150', name:'Black Silk Hoodie'}
+            {image:require('../../assets/greenHoodie.png'), rating:'4', price:'100', name:'Green Cotton Hoodie'},
+            {image:require('../../assets/pinkHoodie.png'), rating:'2', price:'250', name:'Pink Hoodie'},
+            {image:require('../../assets/redHoodie.png'), rating:'5', price:'300', name:'Red Cotton Hoodie'},
+            {image:require('../../assets/hoodie.png'), rating:'3', price:'150', name:'Black Silk Hoodie'}
         ]
 
         return (

@@ -26,7 +26,7 @@ export default class Item extends Component {
                     colors={['#171616', 'transparent']}
                     style={styles.gradient}
                 />
-                <Image style={styles.hoodie} source={require('./assets/hoodie.png')}/>
+                <Image style={styles.hoodie} source={require('../../assets/hoodie.png')}/>
                 </View>
 
                 <View style={styles.titleContainer}>
